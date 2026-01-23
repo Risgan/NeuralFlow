@@ -3,5 +3,8 @@ package com.nauralnet.neuralflow.ui.screens.settings
 import androidx.compose.runtime.Composable
 
 @Composable
-fun SettingsScreen() {
+fun SettingsScreen(
+    onNavigateBack: () -> Unit = {}
+) {
+    // TODO: Implementar UI
 }

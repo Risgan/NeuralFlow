@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  /* Light Theme - Premium Vibrant Blue */
+  --background: #F0F9FF;
+  --surface: #FFFFFF;
+  --ink: #0F172A;
+  --primary: #0EA5E9;
+  --primary-container: #E0F2FE;
+  --on-primary-container: #0369A1;
+  --success: #10B981;
+  --muted: #64748B;
+  --card-shadow: 0 4px 20px -4px rgba(14, 165, 233, 0.1);
+}
+
+.dark {
+  /* Dark Theme - Deep Midnight Blue */
+  --background: #020617;
+  --surface: #0F172A;
+  --ink: #F8FAFC;
+  --primary: #38BDF8;
+  --primary-container: #0C4A6E;
+  --on-primary-container: #BAE6FD;
+  --success: #34D399;
+  --muted: #94A3B8;
+  --card-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.5);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-success: var(--success);
+  --color-muted: var(--muted);
+  --color-rose-500: #F43F5E;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --shadow-premium: var(--card-shadow);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-ink font-sans antialiased transition-colors duration-500;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input[type="date"],
+  input[type="time"],
+  input[type="number"],
+  input[type="text"] {
+    @apply appearance-none bg-surface border-none rounded-2xl p-4 text-ink focus:ring-2 focus:ring-primary/20 outline-none transition-all;
+  }
+}
+
+/* Custom styles for mobile-like feel */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

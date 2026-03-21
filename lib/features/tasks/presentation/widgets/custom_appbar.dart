@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 import 'package:neural_flow/core/constants/theme_controller.dart';
 
@@ -32,6 +33,7 @@ class CustomAppBar extends StatelessWidget {
                 // Icon(Icons.sunny, color: colors.primary),
                 const SizedBox(width: 5),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(title, style: textTheme.titleLarge),
                     if (pendingTasks == 1)Text(
@@ -52,6 +54,16 @@ class CustomAppBar extends StatelessWidget {
                 ),
                 const Spacer(),
                 IconButton(
+                  color: colors.primary,
+                  // splashColor: Colors.red,
+                  // highlightColor: Colors.blue,
+                  style: IconButton.styleFrom(
+                    padding: const EdgeInsets.all(8),
+                    backgroundColor: colors.primaryContainer,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
                   onPressed: () {
                     themeController.toggleLightDark();
                     print('Toggled theme mode: ${themeController.themeMode}');

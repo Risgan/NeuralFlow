@@ -218,8 +218,8 @@ class AppTheme {
           color: tokens.foreground,
         ),
         titleLarge: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
+          fontSize: 25,
+          fontWeight: FontWeight.w900,
           color: tokens.foreground,
         ),
         titleSmall: TextStyle(
